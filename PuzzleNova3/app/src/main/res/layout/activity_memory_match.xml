@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1B4B"
+    android:padding="16dp"
+    tools:context=".MemoryMatchActivity">
+
+    <!--
+        Main Game Area
+        This is hidden at the start and shown by the Kotlin code
+        after difficulty is selected.
+    -->
+    <RelativeLayout
+        android:id="@+id/game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:text="Emoji Match"
+            android:textColor="#00ffff"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <!-- Stats Bar -->
+        <LinearLayout
+            android:id="@+id/stats_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_text_view"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <!-- Moves -->
+            <TextView
+                android:id="@+id/moves_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#4C1D95"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Moves: 0"
+                android:textColor="#00ffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="wrap_content" />
+
+            <!-- Pairs -->
+            <TextView
+                android:id="@+id/pairs_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#4C1D95"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Pairs: 0 / 8"
+                android:textColor="#00ffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- In-Game Button Bar -->
+        <LinearLayout
+            android:id="@+id/in_game_button_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="16dp"
+                android:text="Reset"
+                android:textColor="#00ffff"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/new_game_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="16dp"
+                android:text="New Game"
+                android:textColor="#00ffff"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Game Grid -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cards_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/in_game_button_bar"
+            android:layout_below="@id/stats_bar"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

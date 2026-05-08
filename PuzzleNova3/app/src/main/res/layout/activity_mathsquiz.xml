@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1B4B"
+    android:padding="24dp"
+    tools:context=".MathsQuiz">
+
+    <!--
+        Main Game Area
+        This is hidden at the start and shown by the Kotlin code
+        after difficulty is selected.
+    -->
+    <RelativeLayout
+        android:id="@+id/game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Score and Timer Bar -->
+        <LinearLayout
+            android:id="@+id/score_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
+
+            <!-- Score Box -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#4C1D95"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SCORE"
+                    android:textColor="#88aaff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/score_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#00ffff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <!-- Timer Box -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#4C1D95"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TIME"
+                    android:textColor="#88aaff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timer_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30s"
+                    android:textColor="#00ffff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Question -->
+        <TextView
+            android:id="@+id/question_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/score_bar"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            android:text="15 * 10 = ?"
+            android:textColor="#00ffff"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <!-- Answer Options -->
+        <GridLayout
+            android:id="@+id/options_grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_text_view"
+            android:layout_marginTop="32dp"
+            android:columnCount="2">
+
+            <Button
+                android:id="@+id/option_1_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="24dp"
+                android:text="150"
+                android:textColor="#00ffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/option_2_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="24dp"
+                android:text="10"
+                android:textColor="#00ffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/option_3_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="24dp"
+                android:text="2"
+                android:textColor="#00ffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/option_4_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="24dp"
+                android:text="15"
+                android:textColor="#00ffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </GridLayout>
+
+        <!-- Feedback (Correct/Wrong) -->
+        <TextView
+            android:id="@+id/feedback_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/options_grid_layout"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#00ff00"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+        <!-- In-Game Button Bar -->
+        <LinearLayout
+            android:id="@+id/in_game_button_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="16dp"
+                android:text="Reset"
+                android:textColor="#00ffff"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/new_game_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#003366"
+                android:elevation="4dp"
+                android:outlineAmbientShadowColor="#00ffff"
+                android:outlineSpotShadowColor="#00ffff"
+                android:paddingVertical="16dp"
+                android:text="New Game"
+                android:textColor="#00ffff"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- The Start Game Button is NOT here, as the dialog is shown immediately -->
+
+</RelativeLayout>
+

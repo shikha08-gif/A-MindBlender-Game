@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1B4B"
+    android:padding="16dp"
+    tools:context=".SudokuActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Sudoku"
+        android:textColor="#00ffff"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <!-- Reset and New Game Buttons -->
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:backgroundTint="#003366"
+            android:textColor="#00ffff"
+            android:layout_marginEnd="8dp"
+            android:paddingVertical="12dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/new_game_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New Game"
+            android:backgroundTint="#003366"
+            android:textColor="#00ffff"
+            android:layout_marginStart="8dp"
+            android:paddingVertical="12dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- Number Input Pad -->
+    <GridLayout
+        android:id="@+id/number_pad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_bar"
+        android:layout_marginTop="16dp"
+        android:columnCount="5"
+        android:orientation="horizontal">
+
+        <!-- Buttons 1-9 and Clear -->
+        <Button android:id="@+id/num_1_button" style="@style/SudokuNumberButton" android:text="1" />
+        <Button android:id="@+id/num_2_button" style="@style/SudokuNumberButton" android:text="2" />
+        <Button android:id="@+id/num_3_button" style="@style/SudokuNumberButton" android:text="3" />
+        <Button android:id="@+id/num_4_button" style="@style/SudokuNumberButton" android:text="4" />
+        <Button android:id="@+id/num_5_button" style="@style/SudokuNumberButton" android:text="5" />
+        <Button android:id="@+id/num_6_button" style="@style/SudokuNumberButton" android:text="6" />
+        <Button android:id="@+id/num_7_button" style="@style/SudokuNumberButton" android:text="7" />
+        <Button android:id="@+id/num_8_button" style="@style/SudokuNumberButton" android:text="8" />
+        <Button android:id="@+id/num_9_button" style="@style/SudokuNumberButton" android:text="9" />
+        <Button android:id="@+id/clear_button" style="@style/SudokuNumberButton" android:text="X" />
+    </GridLayout>
+
+    <!-- The Custom Sudoku Board -->
+    <com.example.puzzlenova.SudokuBoardView
+        android:id="@+id/sudoku_board_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/number_pad"
+        android:layout_below="@id/title_text_view"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>
+
+    <!-- You will also need to add this style to your res/values/styles.xml or themes.xml -->
+    <!--
+    <style name="SudokuNumberButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:backgroundTint">#4C1D95</item>
+        <item name="android:textColor">#00ffff</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    -->

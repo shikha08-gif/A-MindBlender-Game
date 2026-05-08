@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="#003366"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <!--
+        This text view will hold the emoji or the '?'
+        Using "wrap_content" for height and "match_parent" for width
+        plus gravity="center" makes it a good square-like shape
+        in a grid.
+    -->
+    <TextView
+        android:id="@+id/card_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="16dp"
+        android:text="👁👀"
+        android:textColor="#00ffff"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+</androidx.cardview.widget.CardView>
+

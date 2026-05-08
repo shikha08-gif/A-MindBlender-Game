@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="16dp" />
+
+    <!--
+        This gradient simulates the from-purple-600 via-pink-600 to-blue-600 effect.
+        Adjust colors to match your theme (e.g., use custom colors defined in colors.xml).
+    -->
+    <gradient
+        android:angle="0"
+        android:startColor="#6D28D9"
+        android:endColor="#2563EB"
+        android:type="linear" />
+
+    <padding
+        android:left="0dp"
+        android:top="0dp"
+        android:right="0dp"
+        android:bottom="0dp" />
+</shape>

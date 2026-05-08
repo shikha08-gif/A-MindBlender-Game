@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1B4B"
+    android:padding="16dp"
+    tools:context=".BlockFillActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Block Fill"
+        android:textColor="#00ffff"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <!-- Level Counter -->
+    <TextView
+        android:id="@+id/level_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Easy Level: 1 / 5"
+        android:textColor="#88aaff"
+        android:textSize="20sp" />
+
+    <!-- Reset and New Game Buttons -->
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:backgroundTint="#003366"
+            android:textColor="#00ffff"
+            android:layout_marginEnd="8dp"
+            android:paddingVertical="12dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/new_game_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New Game"
+            android:backgroundTint="#003366"
+            android:textColor="#00ffff"
+            android:layout_marginStart="8dp"
+            android:paddingVertical="12dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- The Custom Game Board -->
+    <com.example.puzzlenova.BlockFillView
+        android:id="@+id/block_fill_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/button_bar"
+        android:layout_below="@id/level_text_view"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+

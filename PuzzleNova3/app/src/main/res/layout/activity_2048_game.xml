@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="16dp"
+    tools:context=".GameActivity2048">
+
+    <LinearLayout
+        android:id="@+id/score_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#1a2a3a"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:outlineAmbientShadowColor="#00ffff"
+            android:outlineSpotShadowColor="#00ffff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SCORE"
+                android:textColor="#88aaff"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/score_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#00ffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#1a2a3a"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:outlineAmbientShadowColor="#00ffff"
+            android:outlineSpotShadowColor="#00ffff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HIGH SCORE"
+                android:textColor="#88aaff"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/high_score_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#00ffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:backgroundTint="#003366"
+            android:textColor="#00ffff"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            android:elevation="4dp"
+            android:outlineAmbientShadowColor="#00ffff"
+            android:outlineSpotShadowColor="#00ffff"/>
+
+        <Button
+            android:id="@+id/new_game_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New Game"
+            android:backgroundTint="#003366"
+            android:textColor="#00ffff"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:elevation="4dp"
+            android:outlineAmbientShadowColor="#00ffff"
+            android:outlineSpotShadowColor="#00ffff"/>
+    </LinearLayout>
+
+    <com.example.puzzlenova.GameView
+        android:id="@+id/game_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_bar"
+        android:layout_below="@id/score_bar"
+        android:layout_marginTop="16dp"
+        android:background="#222222"
+        android:elevation="4dp"
+        android:outlineAmbientShadowColor="#00ffff"
+        android:outlineSpotShadowColor="#00ffff" />
+
+</RelativeLayout>
